@@ -3,15 +3,37 @@ define
 
 # Entidades:
 
-"muestra-de-suelo" sub entity;
-"cultivo" sub entity;
-"diagnostico-de-compatibilidad" sub entity;
-"recomendacion-de-fertilizante" sub entity;
+"muestra-de-suelo"              sub entity
+    has tipo-de-suelo
+    has porcentaje-de-arcilla
+    has nivel-de-ph
+    has ph
+    has salinidad
+    has conductividad-electrica
+    has nivel-de-material-organico-contenido
+    has porcentaje-de-material-organico
+    has fosforo
+    has potasio
+    has nitrogeno
+    has contaminacion
+    has permite-absorcion-de-agua
+    has apto-para-cultivo;
 
-# -------------------------------------------
+"cultivo"                       sub entity
+    has nombre-del-cultivo
+    has ph-minimo
+    has ph-maximo
+    has necesidad-de-fosforo
+    has necesidad-de-potasio
+    has necesidad-de-nitrogeno;
 
-# Relaciones
+"diagnostico-de-compatibilidad" sub entity
+    has compatibilidad;
 
+"recomendacion-de-fertilizante" sub entity
+    has fosforo-a-agregar
+    has nitrogeno-a-agregar
+    has potasio-a-agregar;
 
 # -------------------------------------------
 
@@ -40,7 +62,6 @@ define
 "necesidad-de-fosforo"                  sub attribute datatype double;
 "necesidad-de-potasio"                  sub attribute datatype double;
 "necesidad-de-nitrogeno"                sub attribute datatype double;
-"diagnostico-de-compatibilidad"         sub attribute datatype boolean;
 
 ## Atributos de diagnostico-de-compatibilidad
 "compatibilidad"                        sub attribute datatype boolean;
@@ -49,3 +70,14 @@ define
 "fosforo-a-agregar"                     sub attribute datatype double;
 "nitrogeno-a-agregar"                   sub attribute datatype double;
 "potasio-a-agregar"                     sub attribute datatype double;
+
+# -------------------------------------------
+
+# Relaciones
+
+
+
+# -------------------------------------------
+
+# Roles
+
