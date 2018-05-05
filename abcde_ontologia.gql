@@ -17,7 +17,8 @@ define
     has nitrogeno
     has contaminacion
     has permite-absorcion-de-agua
-    has apto-para-cultivo;
+    has apto-para-cultivo
+    plays sometido-por;
 
 "cultivo"                       sub entity
     has nombre-del-cultivo
@@ -25,15 +26,20 @@ define
     has ph-maximo
     has necesidad-de-fosforo
     has necesidad-de-potasio
-    has necesidad-de-nitrogeno;
+    has necesidad-de-nitrogeno
+    plays cultivo-comparacion;
 
 "diagnostico-de-compatibilidad" sub entity
-    has compatibilidad;
+    has compatibilidad
+    plays sometedor-de
+    plays compatibilidad-comparacion
+    plays recomendante;
 
 "recomendacion-de-fertilizante" sub entity
     has fosforo-a-agregar
     has nitrogeno-a-agregar
-    has potasio-a-agregar;
+    has potasio-a-agregar
+    plays recomendado;
 
 # -------------------------------------------
 
@@ -75,9 +81,30 @@ define
 
 # Relaciones
 
+"hace-una"          sub relationship 
+    relates recomendado
+    relates recomendante;
 
+"se-somete-a"       sub relationship 
+    relates sometido-por
+    relates sometedor-de;
+
+"se-compara-en"     sub relationship 
+    relates cultivo-comparacion
+    relates compatibilidad-comparacion;
 
 # -------------------------------------------
 
 # Roles
 
+## Roles de hace-una
+"recomendado"                   sub role;
+"recomendante"                  sub role;
+
+## Roles de se-somete-a
+"sometido-por"                  sub role;
+"sometedor-de"                  sub role;
+
+## Roles de se-compara-en
+"cultivo-comparacion"           sub role;
+"compatibilidad-comparacion"    sub role;
