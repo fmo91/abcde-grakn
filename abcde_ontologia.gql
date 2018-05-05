@@ -1,0 +1,51 @@
+# Definicion de la ontologia
+define
+
+# Entidades:
+
+"muestra-de-suelo" sub entity;
+"cultivo" sub entity;
+"diagnostico-de-compatibilidad" sub entity;
+"recomendacion-de-fertilizante" sub entity;
+
+# -------------------------------------------
+
+# Relaciones
+
+
+# -------------------------------------------
+
+# Atributos
+
+## Atributos de muestra-de-suelo
+"tipo-de-suelo"                         sub attribute datatype string;
+"porcentaje-de-arcilla"                 sub attribute datatype long;
+"nivel-de-ph"                           sub attribute datatype string;
+"ph"                                    sub attribute datatype long;
+"salinidad"                             sub attribute datatype string;
+"conductividad-electrica"               sub attribute datatype long;
+"nivel-de-material-organico-contenido"  sub attribute datatype string;
+"porcentaje-de-material-organico"       sub attribute datatype long;
+"fosforo"                               sub attribute datatype double;
+"potasio"                               sub attribute datatype double;
+"nitrogeno"                             sub attribute datatype double;
+"contaminacion"                         sub attribute datatype boolean;
+"permite-absorcion-de-agua"             sub attribute datatype boolean;
+"apto-para-cultivo"                     sub attribute datatype boolean;
+
+## Atributos de cultivo
+"nombre-del-cultivo"                    sub attribute datatype string;
+"ph-minimo"                             sub attribute datatype double;
+"ph-maximo"                             sub attribute datatype double;
+"necesidad-de-fosforo"                  sub attribute datatype double;
+"necesidad-de-potasio"                  sub attribute datatype double;
+"necesidad-de-nitrogeno"                sub attribute datatype double;
+"diagnostico-de-compatibilidad"         sub attribute datatype boolean;
+
+## Atributos de diagnostico-de-compatibilidad
+"compatibilidad"                        sub attribute datatype boolean;
+
+## Atributos de recomendacion-de-fertilizante
+"fosforo-a-agregar"                     sub attribute datatype double;
+"nitrogeno-a-agregar"                   sub attribute datatype double;
+"potasio-a-agregar"                     sub attribute datatype double;
